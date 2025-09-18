@@ -41,6 +41,7 @@ function getCircleCircumference(radius) {
 
 /**
  * Returns an average of two given numbers.
+ * Вывести среднее значение двух чисел.
  *
  * @param {number} value1
  * @param {number} value2
@@ -51,8 +52,8 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  return value1 / 2 + value2 / 2;
 }
 
 /**
