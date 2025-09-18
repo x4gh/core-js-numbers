@@ -331,7 +331,7 @@ function getSine(num) {
 
 /**
  * Returns a string representation of a number in a specified base (radix).
- *
+ *Преобразовать число в строку (метод toString) в указанной системе счисления (radix)
  * @param {number} number
  * @param {number} base
  * @return {string}
@@ -340,8 +340,8 @@ function getSine(num) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
+function numberToStringInBase(number, base) {
+  return number.toString(base);
 }
 
 /**
