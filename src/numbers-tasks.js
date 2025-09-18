@@ -346,6 +346,7 @@ function numberToStringInBase(number, base) {
 
 /**
  * Returns a string representation of a number in exponential notation.
+ * Вернуть строковое значение числа в экспоненциальной форме. Метод toExponential всегда берет число и возвращает строку.
  *
  * @param {number} number
  * @param {number} fractionDigits
@@ -354,8 +355,8 @@ function numberToStringInBase(number, base) {
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-function toExponential(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
+function toExponential(number, fractionDigits) {
+  return number.toExponential(fractionDigits);
 }
 
 /**
