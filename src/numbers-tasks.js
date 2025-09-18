@@ -9,6 +9,7 @@
 
 /**
  * Returns an area of a rectangle given by width and height.
+ * Вывести площать прямоугольника.
  *
  * @param {number} width
  * @param {number} height
@@ -24,6 +25,7 @@ function getRectangleArea(width, height) {
 
 /**
  * Returns a circumference of circle given by radius.
+ * Вывести длины окружности, 2PIradius
  *
  * @param {number} radius
  * @return {number}
@@ -33,8 +35,8 @@ function getRectangleArea(width, height) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(radius) {
+  return 2 * Math.PI * radius;
 }
 
 /**
