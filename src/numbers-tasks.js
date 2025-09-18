@@ -175,6 +175,7 @@ function getParallelepipedDiagonal(a, b, c) {
 
 /**
  * Returns the number rounded to specified power of 10.
+ * Окргуглить число до порядка, равного 10**pow
  *
  * @param {number} num
  * @param {number} pow
@@ -190,8 +191,8 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  return Math.round(num / 10 ** pow) * 10 ** pow;
 }
 
 /**
