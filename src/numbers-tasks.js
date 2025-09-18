@@ -58,6 +58,7 @@ function getAverage(value1, value2) {
 
 /**
  * Returns a distance between two points by cartesian coordinates.
+ * Вывести расстояние между двумя точками в декартовой системе /d=Maht.sqrt((x2-x1)**2+(y2-y1)**2)/
  *
  * @param {number} x1
  * @param {number} y1
@@ -70,8 +71,10 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  const a = (x2 - x1) ** 2;
+  const b = (y2 - y1) ** 2;
+  return Math.sqrt(a + b);
 }
 
 /**
