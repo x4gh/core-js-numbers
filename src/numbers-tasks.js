@@ -212,8 +212,16 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  if (n < 2) {
+    return false; //Если n меньше двух, то возвращается false
+  }
+  for (let i = 2; i < n; i += 1) {   //Если n больше двух, а i больше n и увеличивается на 1 (i +=1 аналогична ++i)
+    if (n % i === 0) { //если n разделится на любое число от n до i без остатка, то число не простое
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
