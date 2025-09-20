@@ -198,7 +198,9 @@ function roundToPowerOfTen(num, pow) {
 /**
  * Returns true is the number is prime; otherwise false.
  * See: https://en.wikipedia.org/wiki/Primality_test
- *
+ *Если n меньше двух, то возвращается false
+ *Если n больше двух, а i больше n и увеличивается на 1 (i +=1 аналогична ++i)
+ *Если n разделится на любое число от n до i без остатка, то число не простое
  * @param {number} n
  * @return {boolean}
  *
@@ -214,10 +216,10 @@ function roundToPowerOfTen(num, pow) {
  */
 function isPrime(n) {
   if (n < 2) {
-    return false; //Если n меньше двух, то возвращается false
+    return false;
   }
-  for (let i = 2; i < n; i += 1) {   //Если n больше двух, а i больше n и увеличивается на 1 (i +=1 аналогична ++i)
-    if (n % i === 0) { //если n разделится на любое число от n до i без остатка, то число не простое
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) {
       return false;
     }
   }
@@ -227,7 +229,10 @@ function isPrime(n) {
 /**
  * Tries to convert value to number and returns it if conversion was successful;
  * otherwise returns default value passed as a second argument.
- *
+ * Если value - число, то вывести value
+ * Если value - строка, то преобразовать строку в число и выполнить проверку, которая уберет варианты, когда строка преобразовалась в NaN
+ * Если value - объект, то преобразовать объект в число
+ * во всех остальныъ случаях вернуть def
  * @param {any} value
  * @param {any} def
  * @return {number}
@@ -239,8 +244,20 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  if (typeof value === 'number') {
+    return value;
+  }
+  if (typeof value === 'string') {
+    const stringToNumber = Number(value);
+    if (!Number.isNaN(stringToNumber)) {
+      return stringToNumber;
+    }
+  }
+  if (value instanceof Number) {
+    return value.valueOf();
+  }
+  return def;
 }
 
 /**
